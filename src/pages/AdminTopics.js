@@ -28,7 +28,7 @@ const AdminTopics = () => {
                 <Fragment>
                         <div className="newPostBtn">
                                 <Button onClick={routeChange} className="newPost" variant="primary">
-                                        <FiEdit3 className="newPostIcon" />
+                                        <FiEdit3 />
                                         </Button>{' '}
                         </div>
                         {rows.map(row => (

@@ -19,7 +19,7 @@ const Posts = () => {
             history.push(path);
           }
           const rows = availablePosts.reduce(function (rows, key, index) { 
-            return (index % 2 === 0 ? rows.push([key]) 
+            return (index % 1 === 0 ? rows.push([key]) 
               : rows[rows.length-1].push(key)) && rows;
           }, []);
     
@@ -27,7 +27,7 @@ const Posts = () => {
             <Fragment>
             <div className="newPostBtn">
                     <Button onClick={routeChange} className="newPost" variant="primary">
-                            <FiEdit3 className="newPostIcon" />
+                            <FiEdit3  />
                             </Button>{' '}
             </div>
             {rows.map(row => (

@@ -46,7 +46,7 @@ const NewUserPost = () => {
                     >
                       {availableTopics.map(topic => {
                             return (
-                                <option value={topic.id}>{topic.name}</option>
+                                <option value={topic.id}>{topic.title}</option>
                             );
                         })}
  

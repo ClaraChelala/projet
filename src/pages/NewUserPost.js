@@ -31,7 +31,6 @@ const NewUserPost = () => {
         };
     }
     const availableTopics = useSelector(state => state.topics.topics);
-
     return (
         <div className="nTopic">
             <Form onSubmit={handleSubmit}>
@@ -46,7 +45,7 @@ const NewUserPost = () => {
                     >
                       {availableTopics.map(topic => {
                             return (
-                                <option value={topic.id}>{topic.name}</option>
+                                <option value={topic.id}>{topic.title}</option>
                             );
                         })}
  
