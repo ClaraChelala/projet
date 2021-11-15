@@ -1,44 +1,44 @@
 import React from 'react';
-import './App.css';
-import * as ReactBootStrap from "react-bootstrap";
-import More from "./Components/more";
-import Topics from "./Components/topics";
-import Favorites from "./Components/favorites";
-import NavBar from "./Components/Navbar"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { createStore, combineReducers } from 'redux';
+import {Provider } from 'react-redux';
 
+import './App.css';
+
+import AuthRoute from './components/auth/AuthRoute';
+import Home from './pages/Home';
+import AdminPosts from './pages/AdminPosts';
+import Posts from './pages/Posts';
+import Signin from './pages/Signin'
+import Users from './pages/Users'
+import NewTopic from './pages/NewTopic'
+
+import Navbar from './components/layout/Navbar';
+
+import postsReducer from './store/reducers/posts';
+import usersReducer from './store/reducers/users';
+
+
+const rootReducer = combineReducers({
+  posts : postsReducer,
+  users: usersReducer,
+});
+
+const store = createStore(rootReducer);
 
 function App() {
   return (
-    <div className="App">
-        <Router>
-        <NavBar />
- 
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/topics" component={Topics}>
-            <Topics />
-          </Route>
-          <Route path="/favorites" component={Favorites}>
-            <Favorites />
-          </Route>
-          <Route path="/more" component={More}>
-            <More/>
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/topics" />
-          </Route>
-        </Switch>
-    </Router>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Route exact path="/signin" component={Signin} />
+        <AuthRoute exact path="/Home" component={Home} />
+        <AuthRoute exact path="/Users" component={Users} />
+        <AuthRoute exact path="/AdminTopics" component={AdminPosts} />
+        <AuthRoute exact path="/Posts" component={Posts} />
+        <AuthRoute exact path="/NewTopic" component={NewTopic} />
+      </Router>
+    </Provider>
   );
 }
 
