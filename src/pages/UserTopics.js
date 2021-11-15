@@ -2,14 +2,13 @@ import React, { Fragment } from 'react'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { FiEye, FiPlus,FiEdit3 } from "react-icons/fi";
-import { BsBoxArrowUpRight } from "react-icons/bs";
+import { FiEye, FiPlus } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 
 
-const AdminTopics = () => {
+const UserTopics = () => {
 
         const history = useHistory();
 
@@ -18,19 +17,14 @@ const AdminTopics = () => {
           history.push(path);
         }
 
-        const availableTopics = useSelector(state => state.topics.topics);
+        const availablePosts = useSelector(state => state.posts.posts);
 
-        const rows = availableTopics.reduce(function (rows, key, index) {
+        const rows = availablePosts.reduce(function (rows, key, index) {
                 return (index % 2 === 0 ? rows.push([key])
                         : rows[rows.length - 1].push(key)) && rows;
         }, []);
         return (
                 <Fragment>
-                        <div className="newPostBtn">
-                                <Button onClick={routeChange} className="newPost" variant="primary">
-                                        <FiEdit3 className="newPostIcon" />
-                                        </Button>{' '}
-                        </div>
                         {rows.map(row => (
                                 <Container>
                                         <Row>
@@ -42,12 +36,9 @@ const AdminTopics = () => {
                                                                                 <p className="card-text">{col.description}</p>
                                                                                 <div className="iconsDiv">
                                                                                         <span className="addBtn">
-                                                                                                <FiPlus className="plusIcon" /> <a href="#" className="card-link">Add</a></span>
-                                                                                        <span className="modifyBtn">
-                                                                                                <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Modifiy</a>
-                                                                                        </span>
+                                                                                                <FiPlus className="plusIcon" /> <a href="#" className="card-link">Add</a></span>                                                                               
                                                                                         <span className="ViewBtn">
-                                                                                        <FiEye className="Fieye" /> <a href="#" className="card-link">View</a>
+                                                                                        <FiEye className="Fieye" />  <a href="#" className="card-link">View</a>
                                                                                         </span>
                                                                                 </div>
                                                                         </div></div>
@@ -55,9 +46,8 @@ const AdminTopics = () => {
                                                 ))}
                                         </Row>
                                 </Container>
-
                         ))}</Fragment>
         );
 
 }
-export default AdminTopics
+export default UserTopics;
