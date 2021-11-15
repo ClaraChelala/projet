@@ -262,8 +262,12 @@ li {
   .card-text{
     color: #808080;
   }
+  .card-date{
+    color: #808080;
+    font-size: 12px;
+  }
   #btnDiscard {
-    background: red;
+    background: #FE412C;
     margin-bottom: 10px;
   }
   .nTopic {
@@ -274,4 +278,24 @@ li {
   .nTopic form {
     margin: 0 auto;
     max-width: 320px;
+  }
+  .newPostBtn{
+    margin: 20px;
+  }
+  .newPost{
+    background-color: #009688 !important;
+  }
+  .newPostIcon{
+    margin-right: 20px;
+    margin-top: -1px;
+  }
+  .show>.dropdown-menu {
+    display: block;
+    position: absolute;
+  }
+  .iconsDiv{
+    display: grid;
+  }
+  .Fieye{
+    color: #0a58ca;
   }
