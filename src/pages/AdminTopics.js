@@ -10,8 +10,15 @@ import { useHistory } from "react-router-dom";
 
 
 const AdminTopics = () => {
-
         const history = useHistory();
+        const hancleClick = {
+
+        }
+        const handleAdd =(e) => {
+                let path  = '/NewAdminPost';
+                history.push(path);
+        }
+ 
 
         const routeChange = () =>{ 
           let path = '/NewTopic'; 
@@ -29,7 +36,7 @@ const AdminTopics = () => {
                         <div className="newPostBtn">
                                 <Button onClick={routeChange} className="newPost" variant="primary">
                                         <FiEdit3 />
-                                        </Button>{' '}
+                                        </Button>
                         </div>
                         {rows.map(row => (
                                 <Container>
@@ -42,9 +49,9 @@ const AdminTopics = () => {
                                                                                 <p className="card-text">{col.description}</p>
                                                                                 <div className="iconsDiv">
                                                                                         <span className="addBtn">
-                                                                                                <FiPlus className="plusIcon" /> <a href="#" className="card-link">Add</a></span>
+                                                                                                <FiPlus className="plusIcon" /> <a href="/NewAdminPost"className="card-link">Add</a></span>
                                                                                         <span className="modifyBtn">
-                                                                                                <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Modifiy</a>
+                                                                                                <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="/ModifyTopics" className="card-link">Delete</a>
                                                                                         </span>
                                                                                         <span className="ViewBtn">
                                                                                         <FiEye className="Fieye" /> <a href="#" className="card-link">View</a>
