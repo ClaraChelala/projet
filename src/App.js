@@ -20,11 +20,13 @@ import postsReducer from './store/reducers/posts';
 import usersReducer from './store/reducers/users';
 import TopicsReducer from './store/reducers/topics';
 import AdminTopics from './pages/AdminTopics';
+import branchesReducer from './store/reducers/branches';
 
 const rootReducer = combineReducers({
   posts: postsReducer,
   users: usersReducer,
   topics : TopicsReducer,
+  branches : branchesReducer,
 });
 
 const store = createStore(rootReducer);

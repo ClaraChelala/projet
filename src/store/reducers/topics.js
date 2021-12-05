@@ -10,7 +10,13 @@ const TopicsReducer = (state = initialState, action) => {
         case Add_Topic:
             return {
                 topics : Topics.slice(),
+                Topics:{...state, ...action.payload}
             };
+            case Delete_Topic:
+                return {
+                    topics : Topics.slice(),
+                    Topics : {...state, ...action.payload}
+                }
 
         default: return state;
     }

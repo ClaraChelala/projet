@@ -1,6 +1,15 @@
 import Post from './post';
 import User from './user';
 import Topic from './topic';
+import Branche from './branches';
+
+export const Branches = [
+    new Branche('Beirut'),
+    new Branche('Zahle'),
+    new Branche('North'),
+    new Branche("South"),
+    new Branche("Ain Saade")
+]
 export const Topics = [
     new Topic(
         '1',

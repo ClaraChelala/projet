@@ -28,7 +28,13 @@ const handleDiscard = (e) => {
     if (topicData.title === "" || topicData.description === "") {
       setErrorMessage((prevState) => ({
         value: "Empty title/description field",
-      }))}
+      }
+
+      
+      ))}else{
+        console.log("essai 1")
+        
+      }
   };
 
 

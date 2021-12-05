@@ -33,6 +33,9 @@ const NewUserPost = () => {
         };
     }
     const availableTopics = useSelector(state => state.topics.topics);
+    console.log(availableTopics);
+    const availableBranches = useSelector(state => state.branches.branches);
+    console.log(availableBranches);
     return (
         <div className="nTopic">
             <Form onSubmit={handleSubmit}>
@@ -55,16 +58,23 @@ const NewUserPost = () => {
                 </Form.Group>
                 <br />
 
+
                 <Form.Group size="lg" controlId="title">
                     <Form.Label>Branch</Form.Label>
                     <Form.Control
                         as="select"
                         custom
+
                     >
-                        <option value="Beirut">Beirut</option>
+                        {availableBranches.map(branche => {
+                            return (
+                                <option >{branche.name}</option>
+                            );
+                        })}
+                        {/* <option value="Beirut">Beirut</option>
                         <option value="South">South</option>
                         <option value="North">North</option>
-                        <option value="Bekaa">Bekaa</option>
+                    <option value="Bekaa">Bekaa</option> */}
                     </Form.Control>
                 </Form.Group>
                 <br />
