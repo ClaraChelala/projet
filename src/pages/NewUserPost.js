@@ -71,10 +71,6 @@ const NewUserPost = () => {
                                 <option >{branche.name}</option>
                             );
                         })}
-                        {/* <option value="Beirut">Beirut</option>
-                        <option value="South">South</option>
-                        <option value="North">North</option>
-                    <option value="Bekaa">Bekaa</option> */}
                     </Form.Control>
                 </Form.Group>
                 <br />

@@ -6,19 +6,15 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import 'bootstrap/dist/css/bootstrap.css';
 import { FiPlus } from "react-icons/fi";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const NewAdminPost = () => {
     const [topicData, setTopicData] = useState({ title: "", description: "" });
     const [errorMessage, setErrorMessage] = useState({ value: "" });
-
     const history = useHistory();
-    
-    const handleDiscard = (e) => {
-        let path = '/Topics';
-        history.pushState(path);
+    const handleDiscard = (e) =>{
+        history.push('/AdminTopics')
     }
-
     const handleInputChange = (e) => {
         setTopicData((prevState) => {
             return {
@@ -37,7 +33,9 @@ const NewAdminPost = () => {
         };
     }
     const availableTopics = useSelector(state => state.topics.topics);
-
+    console.log(availableTopics);
+    const availableBranches = useSelector(state => state.branches.branches);
+    console.log(availableBranches);
     return (
         <div className="nTopic">
             <Form onSubmit={handleSubmit}>
@@ -60,16 +58,19 @@ const NewAdminPost = () => {
                 </Form.Group>
                 <br />
 
+
                 <Form.Group size="lg" controlId="title">
                     <Form.Label>Branch</Form.Label>
                     <Form.Control
                         as="select"
                         custom
+
                     >
-                        <option value="Beirut">Beirut</option>
-                        <option value="South">South</option>
-                        <option value="North">North</option>
-                        <option value="Bekaa">Bekaa</option>
+                        {availableBranches.map(branche => {
+                            return (
+                                <option >{branche.name}</option>
+                            );
+                        })}
                     </Form.Control>
                 </Form.Group>
                 <br />

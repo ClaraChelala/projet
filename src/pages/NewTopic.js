@@ -6,6 +6,7 @@ import { FiPlus } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { Add_Topic } from "../store/reducers/topicsActions";
 import { useHistory } from "react-router-dom";
+import Topic from "../data/topic";
 const NewTopic = () => {
   const [topicData, setTopicData] = useState({ title: "", description: "" });
   const [errorMessage, setErrorMessage] = useState({ value: "" });
@@ -33,7 +34,9 @@ const handleDiscard = (e) => {
       
       ))}else{
         console.log("essai 1")
-        
+        const ok1 = new Topic(9,topicData.title,topicData.description)
+        console.log(ok1)
+        history.push('/AdminTopics')
       }
   };
 

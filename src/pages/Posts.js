@@ -15,7 +15,7 @@ const Posts = () => {
         const history = useHistory();
         
         const routeChange = () =>{ 
-            let path = '/NewUserPost'; 
+            let path = '/NewAdminPost'; 
             history.push(path);
           }
           const rows = availablePosts.reduce(function (rows, key, index) { 

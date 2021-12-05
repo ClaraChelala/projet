@@ -13,9 +13,8 @@ import Users from './pages/Users';
 import NewTopic from './pages/NewTopic';
 import UserPosts from './pages/UserPosts';
 import NewUserPost from './pages/NewUserPost';
-
+import NewAdminPost from './pages/NewAdminPost';
 import Navbar from './components/layout/Navbar';
-
 import postsReducer from './store/reducers/posts';
 import usersReducer from './store/reducers/users';
 import TopicsReducer from './store/reducers/topics';
@@ -44,6 +43,7 @@ function App() {
         <AuthRoute exact path="/NewTopic" component={NewTopic} />
         <AuthRoute exact path="/UserPosts" component={UserPosts} />
         <AuthRoute exact path="/NewUserPost" component={NewUserPost} />
+        <AuthRoute exact path="/NewAdminPost" component={NewAdminPost} />
       </Router>
     </Provider>
   );
