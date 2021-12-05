@@ -6,12 +6,18 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import 'bootstrap/dist/css/bootstrap.css';
 import { FiPlus } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-
-const NewUserPost = () => {
+const NewAdminPost = () => {
     const [topicData, setTopicData] = useState({ title: "", description: "" });
     const [errorMessage, setErrorMessage] = useState({ value: "" });
 
+    const history = useHistory();
+    
+    const handleDiscard = (e) => {
+        let path = '/Topics';
+        history.pushState(path);
+    }
 
     const handleInputChange = (e) => {
         setTopicData((prevState) => {
@@ -90,7 +96,7 @@ const NewUserPost = () => {
                     />
                 </Form.Group>
                 <div className="btnSubmit">
-                    <Button id="btnDiscard" block size="sm">
+                    <Button id="btnDiscard" block size="sm" onClick={handleDiscard}>
                         Discard Changes
                     </Button>
                     <br />

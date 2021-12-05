@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import 'bootstrap/dist/css/bootstrap.css';
 import { FiPlus } from "react-icons/fi";
-
+import { useSelector } from 'react-redux';
+import { Add_Topic } from "../store/reducers/topicsActions";
+import { useHistory } from "react-router-dom";
 const NewTopic = () => {
   const [topicData, setTopicData] = useState({ title: "", description: "" });
   const [errorMessage, setErrorMessage] = useState({ value: "" });
-
-
+  const history = useHistory();
+const handleDiscard = (e) => {
+  let path = '/AdminTopics'; 
+  history.push(path);
+}
   const handleInputChange = (e) => {
     setTopicData((prevState) => {
       return {
@@ -23,9 +28,9 @@ const NewTopic = () => {
     if (topicData.title === "" || topicData.description === "") {
       setErrorMessage((prevState) => ({
         value: "Empty title/description field",
-      }));
+      }))}
   };
-}
+
 
   return (
     <div className="nTopic">
@@ -50,7 +55,7 @@ const NewTopic = () => {
           />
         </Form.Group>
         <div className="btnSubmit">
-        <Button id="btnDiscard" block size="sm">
+        <Button id="btnDiscard" block size="sm" onClick={handleDiscard}>
           Discard Changes
         </Button>
         <br/>
@@ -64,7 +69,8 @@ const NewTopic = () => {
       </Form>
     </div>
     
-  );        
-}
+  );
+}        
+
 
 export default NewTopic;

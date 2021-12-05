@@ -107,24 +107,28 @@ export const Users = [
         '1',
         'Name 1',
         'email1@email.com',
-        'Admin'
+        'Admin',
+        'Manager'
     ),
     new User (
         '2',
         'Name 2',
         'mail2@email.com',
-        'User'
+        'User',
+        'Manager'
     ),
     new User (
         '3',
         'Name 3',
         'mail3@email.com',
-        'User'
+        'User',
+        'Manager'
     ),
     new User (
         '4',
         'Name 4',
         'mail4@email.com',
-        'User'
+        'User',
+        'Manager'
     )
 ]

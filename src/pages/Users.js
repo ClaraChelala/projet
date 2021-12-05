@@ -27,9 +27,11 @@ const Users = () => {
                                         <h5 className="card-title">{col.name}</h5>
                                         <p className="card-text">{col.email}  </p>
                                         <p className="card-admin">{col.admin_flag} {col.id}</p>
+                                        <p className="card-function">{col.fonction}</p>
                                         <div className= "iconsDiv">
                                         <span className="modifyBtn">
-                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Modifiy</a>
+                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Delete</a>
+                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Make Admin</a>
                                         </span>
                                         </div>
                                         </div></div>

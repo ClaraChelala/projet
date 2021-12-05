@@ -36,7 +36,7 @@ const UserTopics = () => {
                                                                                 <p className="card-text">{col.description}</p>
                                                                                 <div className="iconsDiv">
                                                                                         <span className="addBtn">
-                                                                                                <FiPlus className="plusIcon" /> <a href="#" className="card-link">Add</a></span>                                                                               
+                                                                                                <FiPlus className="plusIcon" /> <a href="/NewUserPost" className="card-link">Add</a></span>                                                                               
                                                                                         <span className="ViewBtn">
                                                                                         <FiEye className="Fieye" />  <a href="#" className="card-link">View</a>
                                                                                         </span>
