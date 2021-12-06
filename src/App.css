@@ -17,6 +17,10 @@ body {
   background: #009688;
 
 }
+.FillTrashFill{
+  color: #0a58ca;
+
+}
 
 .menu-header{
   position: absolute;
@@ -258,6 +262,7 @@ li {
   }
   .arrowUpIcon  {
     color: #0a58ca;
+    margin-left: 3px;
   }
   .card-text{
     color: #808080;

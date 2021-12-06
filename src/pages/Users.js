@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import {  BsBoxArrowUpRight } from "react-icons/bs";
+import {BsFillTrashFill} from "react-icons/bs";
 import { useSelector } from 'react-redux';
 
 const Users = () => {
@@ -31,7 +32,7 @@ const Users = () => {
                                         <p className="card-branche">{col.branche}</p>
                                         <div className= "iconsDiv">
                                         <span className="modifyBtn">
-                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Delete   </a>
+                                        <BsFillTrashFill className="FillTrashFill" /> <a href="#" className="card-link">Delete   </a>
                                         <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">   Make Admin</a>
                                         </span>
                                         </div>
