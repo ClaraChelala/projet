@@ -16,10 +16,9 @@ const UserTopics = () => {
           let path = '/NewTopic'; 
           history.push(path);
         }
+        const availableTopics = useSelector(state => state.topics.topics);
 
-        const availablePosts = useSelector(state => state.posts.posts);
-
-        const rows = availablePosts.reduce(function (rows, key, index) {
+        const rows = availableTopics.reduce(function (rows, key, index) {
                 return (index % 2 === 0 ? rows.push([key])
                         : rows[rows.length - 1].push(key)) && rows;
         }, []);
