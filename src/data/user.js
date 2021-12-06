@@ -4,13 +4,15 @@ class User {
       name,
       email,
       admin_flag,
-      fonction
+      fonction,
+      branche,
     ) {
       this.id = id;
       this.name = name;
       this.email = email;
       this.admin_flag = admin_flag;
       this.fonction = fonction;
+      this.branche = branche;
     }
   }
   

@@ -28,10 +28,11 @@ const Users = () => {
                                         <p className="card-text">{col.email}  </p>
                                         <p className="card-admin">{col.admin_flag} {col.id}</p>
                                         <p className="card-function">{col.fonction}</p>
+                                        <p className="card-branche">{col.branche}</p>
                                         <div className= "iconsDiv">
                                         <span className="modifyBtn">
-                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Delete</a>
-                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Make Admin</a>
+                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">Delete   </a>
+                                        <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="#" className="card-link">   Make Admin</a>
                                         </span>
                                         </div>
                                         </div></div>

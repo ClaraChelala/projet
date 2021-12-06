@@ -8,7 +8,8 @@ export const Branches = [
     new Branche('Zahle'),
     new Branche('North'),
     new Branche("South"),
-    new Branche("Ain Saade")
+    new Branche("Ain Saade"),
+    new Branche("Louaize")
 ]
 export const Topics = [
     new Topic(
@@ -117,27 +118,31 @@ export const Users = [
         'Name 1',
         'email1@email.com',
         'Admin',
-        'Manager'
+        'Manager',
+        'Zahle'
     ),
     new User (
         '2',
         'Name 2',
         'mail2@email.com',
         'User',
-        'Manager'
+        'Manager',
+        'Beirut'
     ),
     new User (
         '3',
         'Name 3',
         'mail3@email.com',
         'User',
-        'Manager'
+        'Manager',
+        'North'
     ),
     new User (
         '4',
         'Name 4',
         'mail4@email.com',
         'User',
-        'Manager'
+        'Manager',
+        'South'
     )
 ]
