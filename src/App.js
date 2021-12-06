@@ -20,6 +20,7 @@ import usersReducer from './store/reducers/users';
 import TopicsReducer from './store/reducers/topics';
 import AdminTopics from './pages/AdminTopics';
 import branchesReducer from './store/reducers/branches';
+import AddUser from './pages/AddUser';
 
 const rootReducer = combineReducers({
   posts: postsReducer,
@@ -44,6 +45,8 @@ function App() {
         <AuthRoute exact path="/UserPosts" component={UserPosts} />
         <AuthRoute exact path="/NewUserPost" component={NewUserPost} />
         <AuthRoute exact path="/NewAdminPost" component={NewAdminPost} />
+        <AuthRoute exact path="/AddUser" component={AddUser} />
+
       </Router>
     </Provider>
   );
