@@ -7,6 +7,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { useSelector } from 'react-redux';
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
+import {BsFillTrashFill} from "react-icons/bs";
 
 
 const AdminTopics = () => {
@@ -51,7 +52,7 @@ const AdminTopics = () => {
                                                                                         <span className="addBtn">
                                                                                                 <FiPlus className="plusIcon" /> <a href="/NewAdminPost"className="card-link">Add</a></span>
                                                                                         <span className="modifyBtn">
-                                                                                                <BsBoxArrowUpRight className="arrowUpIcon" /> <a href="/ModifyTopics" className="card-link">Delete</a>
+                                                                                                <BsFillTrashFill className="FillTrashFill" /> <a href="/ModifyTopics" className="card-link">Delete</a>
                                                                                         </span>
                                                                                         <span className="ViewBtn">
                                                                                         <FiEye className="Fieye" /> <a href="#" className="card-link">View</a>

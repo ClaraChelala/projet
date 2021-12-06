@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { Add_Topic } from "../store/reducers/topicsActions";
 import { useHistory } from "react-router-dom";
 import Topic from "../data/topic";
-const NewTopic = () => {
+const ModifyTopics = () => {
   const [topicData, setTopicData] = useState({ title: "", description: "" });
   const [errorMessage, setErrorMessage] = useState({ value: "" });
   const history = useHistory();
@@ -82,4 +82,4 @@ const handleDiscard = (e) => {
 }        
 
 
-export default NewTopic;
+export default ModifyTopics;
