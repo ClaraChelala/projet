@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import {BsFillTrashFill} from "react-icons/bs";
 
 
 const Posts = () => {
@@ -40,8 +41,11 @@ const Posts = () => {
                                                                     <h5 className="card-title" >   {col.title}</h5>
                                                                     <p className="card-date">{col.date}</p>
                                                                     <p className="card-text">{col.content}</p>
+                                                                    <p className="card-date">{col.userId}</p>
                                                                     <div className="iconsDiv">
-                                                                           
+                                                                    <span className="modifyBtn">
+                                                                                                <BsFillTrashFill className="FillTrashFill" /> <a href="" className="card-link">Delete</a>
+                                                                                        </span>   
                                                                            
                                                                     </div>
                                                             </div></div>
@@ -49,6 +53,7 @@ const Posts = () => {
                                     ))}
                             </Row>
                     </Container>
+                    
 
             ))}</Fragment>
 );

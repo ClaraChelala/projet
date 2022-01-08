@@ -52,7 +52,7 @@ const AdminTopics = () => {
                                                                                         <span className="addBtn">
                                                                                                 <FiPlus className="plusIcon" /> <a href="/NewAdminPost"className="card-link">Add</a></span>
                                                                                         <span className="modifyBtn">
-                                                                                                <BsFillTrashFill className="FillTrashFill" /> <a href="/ModifyTopics" className="card-link">Delete</a>
+                                                                                                <BsFillTrashFill className="FillTrashFill" /> <a href="" className="card-link">Delete</a>
                                                                                         </span>
                                                                                         <span className="ViewBtn">
                                                                                         <FiEye className="Fieye" /> <a href="#" className="card-link">View</a>
