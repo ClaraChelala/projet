@@ -40,7 +40,16 @@ const AddUser = () => {
             <Form onSubmit={handleSubmit}>
                 
             <Form.Group size="lg" controlId="name">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                        autoFocus
+                        type="text"
+                        name="Name"
+                        onChange={(e) => handleInputChange(e)}
+                    />
+                </Form.Group>
+                <Form.Group size="lg" controlId="name">
+                    <Form.Label>Last Name</Form.Label>
                     <Form.Control
                         autoFocus
                         type="text"

@@ -13,7 +13,7 @@ const NewAdminPost = () => {
     const [errorMessage, setErrorMessage] = useState({ value: "" });
     const history = useHistory();
     const handleDiscard = (e) =>{
-        history.push('/AdminTopics')
+        history.push('/Posts')
     }
     const handleInputChange = (e) => {
         setTopicData((prevState) => {
@@ -58,22 +58,6 @@ const NewAdminPost = () => {
                 </Form.Group>
                 <br />
 
-
-                <Form.Group size="lg" controlId="title">
-                    <Form.Label>Branch</Form.Label>
-                    <Form.Control
-                        as="select"
-                        custom
-
-                    >
-                        {availableBranches.map(branche => {
-                            return (
-                                <option >{branche.name}</option>
-                            );
-                        })}
-                    </Form.Control>
-                </Form.Group>
-                <br />
 
                 <Form.Group size="lg" controlId="title">
                     <Form.Label>Title</Form.Label>

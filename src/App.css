@@ -226,6 +226,10 @@ li {
   width: 100%;
   background: #009688;
 }
+
+.btnPass button{
+  background: #009688;
+}
   .Login {
     padding: 60px 0;
   }

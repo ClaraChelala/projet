@@ -22,6 +22,7 @@ import AdminTopics from './pages/AdminTopics';
 import branchesReducer from './store/reducers/branches';
 import AddUser from './pages/AddUser';
 import ModifyTopics from './pages/ModifyTopics';
+import ChangePassword from './pages/ChangePass';
 
 
 const rootReducer = combineReducers({
@@ -49,7 +50,7 @@ function App() {
         <AuthRoute exact path="/NewAdminPost" component={NewAdminPost} />
         <AuthRoute exact path="/AddUser" component={AddUser} />
         <AuthRoute exact path="/ModifyTopics" component={ModifyTopics} />
-
+        <Route exact path="/ChangePass" component={ChangePassword} />
       </Router>
     </Provider>
   );

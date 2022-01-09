@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.css';
+import { useHistory } from "react-router-dom";
+
 
 const Signin = () => {
   const [userData, setUserData] = useState({ username: "", password: "" });
@@ -39,7 +41,11 @@ const Signin = () => {
       setErrorMessage((prevState) => ({ value: "Invalid username/password" }));
     }
   };
-
+  const history = useHistory();
+  const routeChange = () =>{ 
+    let path = '/ChangePass'; 
+    history.push(path);
+  }
   return (
     <div className="Login">
       <Form onSubmit={handleSubmit}>
@@ -63,6 +69,11 @@ const Signin = () => {
         <div className="btnSubmit">
         <Button block size="lg" type="submit" onClick={handleSubmit}>
           Login
+        </Button>
+        </div>
+        <div className="btnPass">
+          <Button onClick={routeChange}>
+          Change password
         </Button>
         </div>
             {errorMessage.value && (

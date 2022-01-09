@@ -4,7 +4,7 @@ import Navbarmenu from './Navbarmenu';
 
 const NavBar = () => {
     const location = useLocation();
-    return location.pathname === '/signin' ? null : <Navbarmenu />
+    return location.pathname === '/signin' || location.pathname === '/ChangePass' ? null : <Navbarmenu />
 }
 
 export default NavBar;
