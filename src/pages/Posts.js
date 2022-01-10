@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useCallback, useState } from 'react'
 import { FiEdit3 } from "react-icons/fi";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
@@ -7,12 +7,20 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import {BsFillTrashFill} from "react-icons/bs";
-
+import {getallposts} from '../service/post';
 
 const Posts = () => {
-        
-    const availablePosts = useSelector(state => state.posts.posts);
-    console.log('availableposts' , availablePosts);
+        const [availablePosts,setavailablePosts ] = useState([])
+       const availablePostsCallback = useCallback(
+               async () => {
+                       const result = await getallposts()
+                       setavailablePosts(result)
+               },
+               [],
+       ) 
+       useEffect(() => {availablePostsCallback()}, [availablePostsCallback])
+//     const availablePosts = useSelector(state => state.posts.posts);
+//     console.log('availableposts' , availablePosts);
         const history = useHistory();
         
         const routeChange = () =>{ 

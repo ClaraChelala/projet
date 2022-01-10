@@ -1,13 +1,11 @@
-import { Posts} from '../../data/db';
+
 
 const initialState = {
-    posts: Posts,
+    posts: [],
 }
 
 const postsReducer = (state = initialState, action) => {
     switch (action.type) {
-
-
         default: return state;
 
     }
