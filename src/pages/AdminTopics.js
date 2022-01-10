@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useEffect, useCallback, useState  } from 'react'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -8,9 +8,21 @@ import { useSelector } from 'react-redux';
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import {BsFillTrashFill} from "react-icons/bs";
+import { getalltopics } from '../service/topic';
 
 
 const AdminTopics = () => {
+        const [availableTopics,setavailableTopics ] = useState([])
+       const availableTopicsCallback = useCallback(
+               async () => {
+                       const result = await getalltopics()
+                       setavailableTopics(result)
+               },
+               [],
+       ) 
+       useEffect(() => {availableTopicsCallback()}, [availableTopicsCallback])
+
+
         const history = useHistory();
         const hancleClick = {
 
@@ -26,7 +38,7 @@ const AdminTopics = () => {
           history.push(path);
         }
 
-        const availableTopics = useSelector(state => state.topics.topics);
+       // const availableTopics = useSelector(state => state.topics.topics);
 
         const rows = availableTopics.reduce(function (rows, key, index) {
                 return (index % 2 === 0 ? rows.push([key])

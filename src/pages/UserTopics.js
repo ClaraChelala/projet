@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useEffect, useCallback, useState } from 'react'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -6,7 +6,7 @@ import { FiEye, FiPlus } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
-
+import { getalltopics } from '../service/topic';
 
 const UserTopics = () => {
 
@@ -16,7 +16,16 @@ const UserTopics = () => {
           let path = '/NewTopic'; 
           history.push(path);
         }
-        const availableTopics = useSelector(state => state.topics.topics);
+        const [availableTopics,setavailableTopics ] = useState([])
+       const availableTopicsCallback = useCallback(
+               async () => {
+                       const result = await getalltopics()
+                       setavailableTopics(result)
+               },
+               [],
+       ) 
+       useEffect(() => {availableTopicsCallback()}, [availableTopicsCallback])
+        // const availableTopics = useSelector(state => state.topics.topics);
 
         const rows = availableTopics.reduce(function (rows, key, index) {
                 return (index % 2 === 0 ? rows.push([key])

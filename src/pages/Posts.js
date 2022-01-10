@@ -19,6 +19,7 @@ const Posts = () => {
                [],
        ) 
        useEffect(() => {availablePostsCallback()}, [availablePostsCallback])
+
 //     const availablePosts = useSelector(state => state.posts.posts);
 //     console.log('availableposts' , availablePosts);
         const history = useHistory();
@@ -47,9 +48,9 @@ const Posts = () => {
                                                     <div className="card">
                                                             <div className="card-body">
                                                                     <h5 className="card-title" >   {col.title}</h5>
-                                                                    <p className="card-date">{col.date}</p>
+                                                                    <p className="card-date">{col.time}</p>
                                                                     <p className="card-text">{col.content}</p>
-                                                                    <p className="card-date">{col.userId}</p>
+                                                                    <p className="card-date">{col.user}</p>
                                                                     <div className="iconsDiv">
                                                                     <span className="modifyBtn">
                                                                                                 <BsFillTrashFill className="FillTrashFill" /> <a href="" className="card-link">Delete</a>

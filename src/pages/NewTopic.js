@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { FiPlus } from "react-icons/fi";
+import { FiChevronsLeft, FiPlus } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { Add_Topic } from "../store/reducers/topicsActions";
 import { useHistory } from "react-router-dom";
@@ -23,7 +23,7 @@ const handleDiscard = (e) => {
       };
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (topicData.title === "" || topicData.description === "") {
@@ -33,11 +33,18 @@ const handleDiscard = (e) => {
 
       
       ))}else{
-        console.log("essai 1")
-        const ok1 = new Topic(9,topicData.title,topicData.description)
-        console.log(ok1)
+        fetch("http://localhost:4000/topic/NewTopic",
+              {
+                method: "POST",
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({title: topicData.title, description: topicData.description})
+              });
         history.push('/AdminTopics')
       }
+      
   };
 
 
@@ -79,6 +86,7 @@ const handleDiscard = (e) => {
     </div>
     
   );
+  
 }        
 
 
